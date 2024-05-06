@@ -41,7 +41,7 @@ if ingredients_list:
     ingredients_string = ''
     
     for fruit in ingredients_list:
-        ingredients_string += fruit + ' '
+        ingredients_string +=  fruit.lstrip(" ") + ' '
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit, 'SEARCH_ON'].iloc[0]
         st.write('The search value for ', fruit,' is ', search_on, '.')
         
@@ -53,7 +53,7 @@ if ingredients_list:
     #st.write(ingredients_string)
     
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order, order_filled)  
-                     values ('""" + ingredients_string + """','""" + name_on_order + """',""" + """false""" + """)"""
+                     values('""" + ingredients_string + """','""" + name_on_order + """',""" + """false""" + """)"""
 
 
     st.write(my_insert_stmt)
