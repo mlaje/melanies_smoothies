@@ -4,7 +4,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
-streamlit.title('My parents New Healthy Diner')
+st.title("My parents New Healthy Diner")
 
 st.write(
     """Replace this example with your own code!
